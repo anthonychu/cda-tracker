@@ -1,4 +1,4 @@
-const { appendTrackingInfo } = require('../src/cdatracker');
+const { appendTrackingInfo } = require('../src/cda-tracker');
 const { JSDOM } = require('jsdom');
 const dom = new JSDOM();
 const document = dom.window.document;
