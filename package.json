@@ -1,0 +1,16 @@
+{
+  "name": "cda-tracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^22.1.4",
+    "jsdom": "^11.6.2"
+  },
+  "dependencies": {}
+}
