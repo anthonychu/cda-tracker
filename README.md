@@ -1,6 +1,6 @@
 # CDA Link Tracker
 
-Applies `WT.mc_id=` referral query string to all links that have the following domains:
+Appends `WT.mc_id=` referral query string to all links that have the following domains:
 
 * *.microsoft.com
 * *.msdn.com
