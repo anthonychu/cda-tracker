@@ -24,7 +24,7 @@
       links.filter(l => domainNeedsTracking(l, config.domains) && !isAlreadyTracked(l));
   
     for (var l of needsTracking) {
-      var tracking = 'WT.mc_id=' + config.campaign + '-' + config.medium + '-' + config.alias;
+      var tracking = 'WT.mc_id=' + config.event + '-' + config.channel + '-' + config.alias;
       if (l.search) {
         l.search = l.search + '&' + tracking;
       } else {

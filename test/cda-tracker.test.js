@@ -9,8 +9,8 @@ test('Link that doesn\'t match whitelist should not have tracking attached', () 
   const config = {
     domains: ['docs.microsoft.com'],
     config: {
-        campaign: "blog",
-        medium: "",
+        event: "blog",
+        channel: "",
         alias: 'antchu'
     }
   };
@@ -25,8 +25,8 @@ test('Link that matches whitelist should have tracking attached', () => {
   a.href = "https://docs.microsoft.com/foo";
   const config = {
     domains: ['docs.microsoft.com'],
-    campaign: "foo",
-    medium: "bar",
+    event: "foo",
+    channel: "bar",
     alias: 'antchu'
   };
 
@@ -40,8 +40,8 @@ test('Link that matches whitelist and has existing query string should have trac
   a.href = "https://docs.microsoft.com/foo?bar=1&foo=2";
   const config = {
     domains: ['docs.microsoft.com'],
-    campaign: "foo",
-    medium: "bar",
+    event: "foo",
+    channel: "bar",
     alias: 'antchu'
   };
 
@@ -55,8 +55,8 @@ test('Link that matches whitelist and has existing tracking should be left alone
   a.href = "https://docs.microsoft.com/foo?WT.mc_id=1-2-3";
   const config = {
     domains: ['docs.microsoft.com'],
-    campaign: "foo",
-    medium: "bar",
+    event: "foo",
+    channel: "bar",
     alias: 'antchu'
   };
 
@@ -70,8 +70,8 @@ test('Link that matches a regex in whitelist should have referrer query string a
   a.href = "https://docs.microsoft.com/foo";
   const config = {
     domains: [/.*\.microsoft\.com/],
-    campaign: "foo",
-    medium: "bar",
+    event: "foo",
+    channel: "bar",
     alias: 'antchu'
   };
 
