@@ -38,7 +38,7 @@
   }
   
   function domainNeedsTracking(link, domains) {
-    return domains.some(d => {
+    return domains.some(function(d) {
       if (d instanceof RegExp) {
         return d.test(link.hostname);
       } else if (typeof(d) === 'string') {
