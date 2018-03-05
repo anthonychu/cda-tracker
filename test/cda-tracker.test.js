@@ -32,7 +32,7 @@ test('Link that matches whitelist should have tracking attached', () => {
 
   appendTrackingInfo(config, [a]);
 
-  expect(a.href).toBe('https://docs.microsoft.com/foo?WT.mc_id=foo-bar-antchu');
+  expect(a.href).toBe('https://docs.microsoft.com/foo?wt.mc_id=foo-bar-antchu');
 });
 
 test('Link that matches whitelist and has existing query string should have tracking attached properly', () => {
@@ -47,12 +47,12 @@ test('Link that matches whitelist and has existing query string should have trac
 
   appendTrackingInfo(config, [a]);
 
-  expect(a.href).toBe('https://docs.microsoft.com/foo?bar=1&foo=2&WT.mc_id=foo-bar-antchu');
+  expect(a.href).toBe('https://docs.microsoft.com/foo?bar=1&foo=2&wt.mc_id=foo-bar-antchu');
 });
 
 test('Link that matches whitelist and has existing tracking should be left alone', () => {
   const a = document.createElement('a');
-  a.href = "https://docs.microsoft.com/foo?WT.mc_id=1-2-3";
+  a.href = "https://docs.microsoft.com/foo?wt.mc_id=1-2-3";
   const config = {
     domains: ['docs.microsoft.com'],
     event: "foo",
@@ -62,7 +62,7 @@ test('Link that matches whitelist and has existing tracking should be left alone
 
   appendTrackingInfo(config, [a]);
 
-  expect(a.href).toBe('https://docs.microsoft.com/foo?WT.mc_id=1-2-3');
+  expect(a.href).toBe('https://docs.microsoft.com/foo?wt.mc_id=1-2-3');
 });
 
 test('Link that matches a regex in whitelist should have referrer query string attached', () => {
@@ -77,5 +77,5 @@ test('Link that matches a regex in whitelist should have referrer query string a
 
   appendTrackingInfo(config, [a]);
 
-  expect(a.href).toBe('https://docs.microsoft.com/foo?WT.mc_id=foo-bar-antchu');
+  expect(a.href).toBe('https://docs.microsoft.com/foo?wt.mc_id=foo-bar-antchu');
 });
