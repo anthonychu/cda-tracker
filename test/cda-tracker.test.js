@@ -79,3 +79,18 @@ test('Link that matches a regex in whitelist should have referrer query string a
 
   expect(a.href).toBe('https://docs.microsoft.com/foo?WT.mc_id=foo-bar-antchu');
 });
+
+test('Link that has a hash should have code properly appended.', () => {
+  const a = document.createElement('a');
+  a.href = "https://docs.microsoft.com/foo#1234";
+  const config = {
+    domains: [/.*\.microsoft\.com/],
+    event: "foo",
+    channel: "bar",
+    alias: 'antchu'
+  };
+
+  appendTrackingInfo(config, [a]);
+
+  expect(a.href).toBe('https://docs.microsoft.com/foo?WT.mc_id=foo-bar-antchu#1234');
+});
