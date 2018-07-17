@@ -1,6 +1,6 @@
 # CDA Link Tracker
 
-Appends `wt.mc_id=` referral query string to all links that have the following domains:
+Appends `WT.mc_id=` referral query string to all links that have the following domains:
 
 * *.microsoft.com
 * *.msdn.com
@@ -12,7 +12,7 @@ Appends `wt.mc_id=` referral query string to all links that have the following d
 Place this code at the end of the `</body>` on any web page:
 
 ```html
-<script src="//cdn.jsdelivr.net/gh/anthonychu/cda-tracker@0.2/src/cda-tracker.js"></script>
+<script src="//cdn.jsdelivr.net/gh/anthonychu/cda-tracker@0.3/src/cda-tracker.js"></script>
 <script>
 cdaTracker({
     domains: [], // additional domains (string or regex)
